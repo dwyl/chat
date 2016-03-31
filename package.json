@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/dwyl/chat#readme",
   "devDependencies": {
-    "dpl": "^2.0.0"
+    "dpl": "^2.0.0",
+    "tape": "^4.5.1"
   }
 }
