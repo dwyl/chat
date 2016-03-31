@@ -6,18 +6,24 @@
   "directories": {
     "test": "test"
   },
+  "files_to_deploy": [
+    "package.json",
+    "index.js",
+    "lib/"
+  ],
   "scripts": {
-    "test": "tape"
+    "test": "tape",
+    "deploy": "node ./node_modules/dpl/dpl.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dwyl/chat.git"
   },
   "keywords": [
-    "Chat.",
-    "AWS.",
-    "Serverless.",
-    "Demo.",
+    "Chat",
+    "AWS",
+    "Serverless",
+    "Demo",
     "Example"
   ],
   "author": "dwyl",
@@ -25,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/dwyl/chat/issues"
   },
-  "homepage": "https://github.com/dwyl/chat#readme"
+  "homepage": "https://github.com/dwyl/chat#readme",
+  "devDependencies": {
+    "dpl": "^2.0.0"
+  }
 }
