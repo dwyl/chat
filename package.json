@@ -1,0 +1,29 @@
+{
+  "name": "achat",
+  "version": "1.0.0",
+  "description": "Chat that scales predictably.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwyl/chat.git"
+  },
+  "keywords": [
+    "Chat.",
+    "AWS.",
+    "Serverless.",
+    "Demo.",
+    "Example"
+  ],
+  "author": "dwyl",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/dwyl/chat/issues"
+  },
+  "homepage": "https://github.com/dwyl/chat#readme"
+}
