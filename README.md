@@ -29,12 +29,14 @@ for `{{ insert name of silicon valley unicorn messenger app here }}`.
 
 We use S3 to render our initial page and host all our static content.
 https://aws.amazon.com/s3/
++ Node.js SDK Examples: http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-examples.html
 
 ### API Gateway
 
 API Gateway routes the requests we make from the front-end through to
 the Lambda function that will process it.
-https://aws.amazon.com/api-gateway/
++ Overview: https://aws.amazon.com/api-gateway/
++ SDK Docs: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/APIGateway.html
 
 ### Lambda
 

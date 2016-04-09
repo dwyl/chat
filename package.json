@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/dwyl/chat#readme",
   "devDependencies": {
+    "aws-sdk": "^2.3.3",
     "dpl": "^2.0.0",
     "tape": "^4.5.1"
   }
