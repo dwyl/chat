@@ -11,11 +11,9 @@ var CONTEXT = {
 };
 
 var EVENT = {
-  msg: {
-    m: 'Herro!',
-    t: Date.now(),
-    n: 'bot'
-  }
+  m: 'Herro!',
+  t: Date.now(),
+  n: 'bot'
 };
 
 test('invoke the save_message', function (t) {

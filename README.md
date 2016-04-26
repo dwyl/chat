@@ -26,7 +26,7 @@ for `{{ insert name of silicon valley unicorn messenger app here }}`.
 ### Lambda
 
 
-curl -v -H "Content-Type: application/json" -X POST -d '{"msg":{"m":"curl this","n":"a person","t":"1234"}}' https://r09u5uw11g.execute-api.eu-west-1.amazonaws.com/prod/savemessage
+curl -v -H "Content-Type: application/json" -X POST -d '{"m":"curl this","n":"a person","t":"1234"}' https://r09u5uw11g.execute-api.eu-west-1.amazonaws.com/prod/savemessage
 
 
 
@@ -40,10 +40,59 @@ https://aws.amazon.com/s3/
 
 ### API Gateway
 
+```js
+##  See http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
+##  This template will pass through all parameters including path, querystring, header, stage variables, and context through to the integration endpoint via the body/payload
+#set($allParams = $input.params())
+{
+"body-json" : "$input.json('$')",
+"params" : {
+#foreach($type in $allParams.keySet())
+    #set($params = $allParams.get($type))
+"$type" : {
+    #foreach($paramName in $params.keySet())
+    "$paramName" : "$util.escapeJavaScript($params.get($paramName))"
+        #if($foreach.hasNext),#end
+    #end
+}
+    #if($foreach.hasNext),#end
+#end
+},
+"stage-variables" : {
+#foreach($key in $stageVariables.keySet())
+"$key" : "$util.escapeJavaScript($stageVariables.get($key))"
+    #if($foreach.hasNext),#end
+#end
+},
+"context" : {
+    "account-id" : "$context.identity.accountId",
+    "api-id" : "$context.apiId",
+    "api-key" : "$context.identity.apiKey",
+    "authorizer-principal-id" : "$context.authorizer.principalId",
+    "caller" : "$context.identity.caller",
+    "cognito-authentication-provider" : "$context.identity.cognitoAuthenticationProvider",
+    "cognito-authentication-type" : "$context.identity.cognitoAuthenticationType",
+    "cognito-identity-id" : "$context.identity.cognitoIdentityId",
+    "cognito-identity-pool-id" : "$context.identity.cognitoIdentityPoolId",
+    "http-method" : "$context.httpMethod",
+    "stage" : "$context.stage",
+    "source-ip" : "$context.identity.sourceIp",
+    "user" : "$context.identity.user",
+    "user-agent" : "$context.identity.userAgent",
+    "user-arn" : "$context.identity.userArn",
+    "request-id" : "$context.requestId",
+    "resource-id" : "$context.resourceId",
+    "resource-path" : "$context.resourcePath"
+    }
+}
+
+```
+
 API Gateway routes the requests we make from the front-end through to
 the Lambda function that will process it.
 + Overview: https://aws.amazon.com/api-gateway/
 + SDK Docs: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/APIGateway.html
++ HTTP Method: http://stackoverflow.com/questions/35252544/how-to-get-the-http-method-in-aws-lambda
 
 ### Lambda
 

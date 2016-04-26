@@ -6,14 +6,16 @@ var s3bucket = new AWS.S3({params: {Bucket: bucket}});
 function handler (event, context) {
   console.log('event', JSON.stringify(event));
   console.log(' - - - - - - - - - - - - - - - - - - - - - - - - ');
+  console.log('context', JSON.stringify(context));
+  console.log(' - - - - - - - - - - - - - - - - - - - - - - - - ');
 
-  if(!event.msg) {
+  if(!event.m) {
     return context.fail('no message in event');
   }
 
   var params = {
-    Key: 'chat/' + event.msg.t + '.json',
-    Body: JSON.stringify(event.msg),
+    Key: 'chat/' + event.t + '.json',
+    Body: JSON.stringify(event),
     ContentType: 'application/json',
     ACL: 'public-read'
   };

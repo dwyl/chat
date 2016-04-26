@@ -10,14 +10,18 @@
 
     <ul id="messages"></ul>
 
-    <form action="">
+    <form method='POST'
+      action='https://r09u5uw11g.execute-api.eu-west-1.amazonaws.com/prod/savemessage'>
       <input id="m" autocomplete="off" />
-      <button>Send</button>
+      <input type='text' id='n' value='mike' name='n' />
+      <input type='text' id='t' value='12345' name='t' />
+      <input type='submit' value='send' id='send'/>
+      <p> Herro!</p>
     </form>
 
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <script src="https://cdn.rawgit.com/ScottHamper/Cookies/1.2.1/dist/cookies.min.js">
     </script>
-    <script src="/client.js"></script>
+
   </body>
 </html>
