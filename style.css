@@ -1,0 +1,93 @@
+/*==============================
+  GENERAL STYLES
+================================*/
+
+/*https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/*/
+*, html {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 1.5em Helvetica, Arial;
+  height: 100%;
+  padding-bottom: 2.3em;
+  overflow:auto;
+}
+
+
+
+/*==============================
+  #MESSAGE-INPUT-FORM
+================================*/
+form {
+  background: #2c3e50;
+  height: 2.3em;
+  width: 100%;
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+}
+
+  form input {
+    border: 0;
+    font-size: 1em;
+    /*height: 2px;*/
+    height: 2em;
+    width: 85%;
+    padding:0.5em;
+    margin-right: .5%;
+  }
+
+  form button {
+    background: #27ae60;
+    border: none;
+    color: white;
+    font-size: 1em;
+    height: 2em;
+    width: 14%;
+    padding: 10px;
+  }
+
+/*==============================
+  #JOINING-CHAT-STRAPLINE
+================================*/
+
+#joiners {
+  background-color:#2c3e50;
+  color: white;
+  height: 2em;
+  opacity:0.9;
+  padding: 0.5em 0 1em 2em;
+  z-index: 3;
+}
+
+#joined  { color: #40d47e; }
+
+
+
+/*==============================
+  #MESSAGES-WINDOW
+================================*/
+#messages {
+  list-style-type: none;
+  margin: 0;
+  max-height: 90%;
+  padding: 0;
+}
+
+  #messages li { padding: 5px 10px; }
+
+    #messages li:nth-child(odd) { background: #eee; }
+
+
+/* == Individual messages == */
+.time { color: #2c3e50; }
+
+.name { color: #2980b9; }

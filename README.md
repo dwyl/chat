@@ -25,11 +25,18 @@ for `{{ insert name of silicon valley unicorn messenger app here }}`.
 
 ### Lambda
 
+
+curl -v -H "Content-Type: application/json" -X POST -d '{"msg":{"m":"curl this","n":"a person","t":"1234"}}' https://r09u5uw11g.execute-api.eu-west-1.amazonaws.com/prod/savemessage
+
+
+
+
 ### S3
 
 We use S3 to render our initial page and host all our static content.
 https://aws.amazon.com/s3/
 + Node.js SDK Examples: http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-examples.html
++ Working with Folders: http://docs.aws.amazon.com/AmazonS3/latest/UG/FolderOperations.html
 
 ### API Gateway
 
