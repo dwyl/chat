@@ -1,4 +1,4 @@
-var savemessages = require('./lib/savemessages');
+var savemessage = require('./lib/savemessage');
 
 function handler (event, context) {
   console.log('event', JSON.stringify(event));
@@ -10,7 +10,7 @@ function handler (event, context) {
     return context.fail('no message in event');
   }
 
-  savemessages(event, function(err, data) {
+  savemessage(event, function(err, data) {
     if (err) {
       console.log("Error uploading data: ", err);
     } else {

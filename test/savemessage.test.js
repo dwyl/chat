@@ -1,5 +1,5 @@
 var test = require('tape');
-var savemessages = require('../lib/savemessages');
+var savemessage = require('../lib/savemessage');
 
 var EVENT = {
   m: 'Herro!',
@@ -8,7 +8,7 @@ var EVENT = {
 };
 
 test('invoke the save_message', function (t) {
-  savemessages(EVENT, function(err, data){
+  savemessage(EVENT, function(err, data){
     // console.log(err, data);
     t.equal(data.Key, 'chat/' + EVENT.t + '.json');
     t.end();
