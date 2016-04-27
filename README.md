@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/dwyl/chat/branch/master/graph/badge.svg)](https://codecov.io/gh/dwyl/chat)
 
 
-A technology showcase.
+> try it: https://dwyl.s3.amazonaws.com/index.html
 
 ## Why?
 
