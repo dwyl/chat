@@ -11,11 +11,9 @@ var CONTEXT = {
 };
 
 var EVENT = {
-  body: {
-    m: 'How you doin?! @ '+ new Date().toUTCString(),
-    t: Date.now(),
-    n: 'joey'
-  }
+  m: 'How you doin?! @ '+ new Date().toUTCString(),
+  t: Date.now(),
+  n: 'joey'
 };
 
 test('invoke the save_message', function (t) {
