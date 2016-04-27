@@ -1,0 +1,39 @@
+{
+  "name": "achat",
+  "version": "1.0.0",
+  "description": "Chat that scales predictably.",
+  "main": "index.js",
+  "files_to_deploy": [
+    "package.json",
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "fast": "tape ./test/*.js",
+    "test": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js",
+    "deploy": "node ./node_modules/dpl/dpl.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwyl/chat.git"
+  },
+  "keywords": [
+    "Chat",
+    "AWS",
+    "Serverless",
+    "Demo",
+    "Example"
+  ],
+  "author": "dwyl",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/dwyl/chat/issues"
+  },
+  "homepage": "https://github.com/dwyl/chat#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.3.3",
+    "dpl": "^2.1.0",
+    "istanbul": "^0.4.3",
+    "tape": "^4.5.1"
+  }
+}
