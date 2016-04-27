@@ -1,4 +1,5 @@
-var savemessage = require('./lib/savemessage');
+var get = require('./lib/get');
+var save = require('./lib/save');
 
 function handler (event, context) {
   console.log('event', JSON.stringify(event));
@@ -6,18 +7,25 @@ function handler (event, context) {
   console.log('context', JSON.stringify(context));
   console.log(' - - - - - - - - - - - - - - - - - - - - - - - - ');
 
-  if(!event.m) {
-    return context.fail('no message in event');
+  if(!event || !event.m) { // GET
+    get(function(err, data) {
+      context.succeed(data);
+    });
+  }
+  else if (event.m) { // SAVE
+    save(event, function(err, data) {
+      if (err) {
+        console.log("Error uploading data: ", err);
+      } else {
+        console.log("Successfully uploaded data to ", data.Location);
+        return context.succeed(data.Location);
+      }
+    });
+  }
+  else {
+    context.fail('no message provided')
   }
 
-  savemessage(event, function(err, data) {
-    if (err) {
-      console.log("Error uploading data: ", err);
-    } else {
-      console.log("Successfully uploaded data to ", data.Location);
-      return context.succeed(data.Location);
-    }
-  });
 }
 
 exports.handler = handler;
