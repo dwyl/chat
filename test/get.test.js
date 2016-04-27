@@ -3,7 +3,7 @@ var get = require('../lib/get');
 
 var EVENT = {
   body: {
-    m: 'Herro Wold! @ '+ new Date().toUTCString(),
+    m: 'Tests...',
     t: Date.now(),
     n: 'bot'
   }
