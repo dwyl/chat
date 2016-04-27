@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/dwyl/chat.svg?branch=master)](https://travis-ci.org/dwyl/chat)
 [![codecov](https://codecov.io/gh/dwyl/chat/branch/master/graph/badge.svg)](https://codecov.io/gh/dwyl/chat)
+[![Code Climate](https://codeclimate.com/github/dwyl/chat/badges/gpa.svg)](https://codeclimate.com/github/dwyl/chat)
+[![Dependency Status](https://david-dm.org/dwyl/chat.svg)](https://david-dm.org/dwyl/chat)
+[![devDependency Status](https://david-dm.org/dwyl/chat/dev-status.svg)](https://david-dm.org/dwyl/chat#info=devDependencies)
 
 
 > try it: https://dwyl.s3.amazonaws.com/index.html

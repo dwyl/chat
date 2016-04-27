@@ -2,7 +2,7 @@ var test = require('tape');
 var save = require('../lib/save');
 
 var EVENT = {
-  m: 'Herro Wold! @ '+ new Date().toUTCString(),
+  m: 'Herro Wold!',
   t: Date.now(),
   n: 'bot'
 };
