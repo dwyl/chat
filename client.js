@@ -27,6 +27,15 @@ $( document ).ready(function() {
     return '' + h  + ':' + m + ':' + s;
   }
 
+  function htmlEscape (str) {
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   /**
    * renders messages to the DOM
    * nothing fancy ... where's the React?! Don't Freak out! It works!
@@ -35,8 +44,8 @@ $( document ).ready(function() {
     msg = JSON.parse(msg);
     var html = "<li class='row'>";
     html += "<small class='time'>" + getTime(msg.t)  + " </small>";
-    html += "<span class='name'>" + msg.n + ": </span>";
-    html += "<span class='msg'>"  + msg.m + "</span>";
+    html += "<span class='name'>" + htmlEscape(msg.n) + ": </span>";
+    html += "<span class='msg'>"  + htmlEscape(msg.m) + "</span>";
     html += "</li>";
     $('#messages').append(html);  // append to list
     return;
