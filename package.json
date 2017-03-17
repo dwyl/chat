@@ -1,39 +1,20 @@
 {
-  "name": "achat",
-  "version": "1.0.0",
-  "description": "Chat that scales predictably.",
-  "main": "index.js",
-  "files_to_deploy": [
-    "package.json",
-    "index.js",
-    "lib/"
-  ],
+  "repository": {},
+  "license": "MIT",
   "scripts": {
-    "fast": "tape ./test/*.js",
-    "test": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js",
-    "deploy": "node ./node_modules/dpl/dpl.js"
+    "deploy": "brunch build --production",
+    "watch": "brunch watch --stdin"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dwyl/chat.git"
+  "dependencies": {
+    "phoenix": "file:deps/phoenix",
+    "phoenix_html": "file:deps/phoenix_html"
   },
-  "keywords": [
-    "Chat",
-    "AWS",
-    "Serverless",
-    "Demo",
-    "Example"
-  ],
-  "author": "dwyl",
-  "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/dwyl/chat/issues"
-  },
-  "homepage": "https://github.com/dwyl/chat#readme",
   "devDependencies": {
-    "aws-sdk": "^2.3.3",
-    "dpl": "^2.1.0",
-    "istanbul": "^0.4.3",
-    "tape": "^4.5.1"
+    "babel-brunch": "~6.0.0",
+    "brunch": "2.7.4",
+    "clean-css-brunch": "~2.0.0",
+    "css-brunch": "~2.0.0",
+    "javascript-brunch": "~2.0.0",
+    "uglify-js-brunch": "~2.0.1"
   }
 }
