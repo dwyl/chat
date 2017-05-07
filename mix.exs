@@ -19,7 +19,7 @@ defmodule Chat.Mixfile do
   def application do
     [mod: {Chat, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :edeliver, :phoenix_live_reload]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,9 +35,12 @@ defmodule Chat.Mixfile do
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:phoenix_live_reload, "~> 1.0"}, #, only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:edeliver, git: "https://github.com/boldpoker/edeliver.git"},
+     {:distillery, ">= 1.3.5", warn_missing: false},
+  ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
