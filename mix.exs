@@ -38,8 +38,8 @@ defmodule Chat.Mixfile do
      {:phoenix_live_reload, "~> 1.0"}, #, only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:edeliver, git: "https://github.com/boldpoker/edeliver.git"},
-     {:distillery, ">= 1.3.5", warn_missing: false},
+     {:edeliver, "~> 1.4.2"},
+     {:distillery, ">= 0.8.0", warn_missing: false},
   ]
   end
 
