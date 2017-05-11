@@ -2,16 +2,16 @@
 
 APP="chat" # name of your release
 
-BUILD_HOST="178.62.95.224" # host where to build the release
+BUILD_HOST="178.62.57.75" # host where to build the release
 BUILD_USER="root" # local user at build host
 BUILD_AT="/git/chat/builds" # build directory on build host
 RELEASE_DIR="/git/chat/builds/rel/chat"
 RELEASE_VERSION=0.0.1
 
-STAGING_HOSTS="178.62.95.224" # staging / test hosts separated by space
+STAGING_HOSTS="178.62.57.75" # staging / test hosts separated by space
 STAGING_USER="root" # local user at staging hosts
 TEST_AT="/test/chat" # deploy directory on staging hosts. default is DELIVER_TO
 
-PRODUCTION_HOSTS="178.62.95.224" # deploy / production hosts separated by space
+PRODUCTION_HOSTS="178.62.57.75" # deploy / production hosts separated by space
 PRODUCTION_USER="root" # local user at deploy hosts
 DELIVER_TO="/opt/chat" # deploy directory on production hosts
